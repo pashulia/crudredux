@@ -1,20 +1,14 @@
 import React from 'react';
 
-import { useProducts } from '../../../hooks/products.hook';
+import { useSelector } from 'react-redux';
+
+import { selectProducts } from '../../../store/product/product.selectors';
 import ProductList from './product-list.component';
 
 const ProductListContainer: React.FC = () => {
-    const { products, loading, error } = useProducts();
+    const productList = useSelector(selectProducts);
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
-
-    if (error) {
-        return <div>{error}</div>;
-    }
-
-    return <ProductList products={products} />;
+    return <ProductList products={productList} />;
 };
 
 export default ProductListContainer;

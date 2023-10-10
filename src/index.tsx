@@ -1,14 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './app';
-import GlobalStyles from './assets/styles/global.styles'
+import ReactDOM from 'react-dom';
 
-const root = ReactDOM.createRoot(
-    document.getElementById('root') as HTMLElement
-);
-root.render(
-    <React.StrictMode>
-        <App/>
-        <GlobalStyles/>
-    </React.StrictMode>
+import { Provider } from 'react-redux';
+
+import App from './app';
+import { store } from './store/store';
+
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementById('root')
 );
