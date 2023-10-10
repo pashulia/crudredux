@@ -6,6 +6,7 @@ import React, {
 import styled from 'styled-components';
 
 import { ProductModel } from '../../../models/product.model';
+import Description from '../../Description';
 
 const CardContainer = styled.div`
     display: flex;
@@ -30,10 +31,6 @@ const ProductTitle = styled.h2`
     font-size: 18px;
 `;
 
-const ProductDescription = styled.p`
-    font-size: 14px;
-`;
-
 const ProductPrice = styled.div`
     font-size: 16px;
 `;
@@ -46,7 +43,7 @@ export const ProductCard: FC<ProductCardProps> = ({ title, image, price, descrip
             <ProductImage src={image} alt={title} />
             <ProductInfo>
                 <ProductTitle>{title}</ProductTitle>
-                <ProductDescription>{description}</ProductDescription>
+                <Description text={description} maxLength={150} />
             </ProductInfo>
             <ProductPrice>${price}</ProductPrice>
         </CardContainer>
