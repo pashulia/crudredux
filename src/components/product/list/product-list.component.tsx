@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { ProductModel } from '../../../models/product.model';
+import Description from '../../Description';
 
 interface ProductListProps {
     products: ProductModel[];
@@ -14,7 +15,7 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
                 {products.map((product) => (
                     <li key={product.id}>
                         <h2>{product.title}</h2>
-                        <p>{product.description}</p>
+                        <Description text={product.description}/>
                         <p>Price: ${product.price}</p>
                     </li>
                 ))}
