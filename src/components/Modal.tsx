@@ -10,7 +10,7 @@ const ModalBackdrop = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(30, 29, 29, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +38,7 @@ const ModalTitle = styled.h2`
 
 const CloseButton = styled.button`
     background: none;
-    border: solid 1px black;
+    border: none;
     cursor: pointer;
 `;
 
@@ -55,7 +55,7 @@ const Modal: React.FC<ModalProps> = ({ title, visible, onClose, children }) => {
     }
 
     return (
-        <ModalBackdrop>
+        <ModalBackdrop onClick={onClose}>
             <ModalContent>
                 <ModalHeader>
                     <ModalTitle>{title}</ModalTitle>

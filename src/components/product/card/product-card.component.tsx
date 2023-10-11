@@ -37,9 +37,7 @@ const ProductPrice = styled.div`
 
 type ProductCardProps = ProductModel;
 
-export const ProductCard: FC<ProductCardProps> = ({ title, image, price, description }) => {
-    console.log(description);
-    
+export const ProductCard: FC<ProductCardProps> = ({ title, image, price, description }) => {  
     return (
         <CardContainer>
             <ProductImage src={image} alt={title} />
