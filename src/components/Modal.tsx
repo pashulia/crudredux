@@ -55,7 +55,7 @@ const Modal: React.FC<ModalProps> = ({ title, visible, onClose, children }) => {
     }
 
     return (
-        <ModalBackdrop onClick={onClose}>
+        <ModalBackdrop>
             <ModalContent>
                 <ModalHeader>
                     <ModalTitle>{title}</ModalTitle>

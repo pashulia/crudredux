@@ -17,9 +17,9 @@ const Description: React.FC<DescriptionProps> = ({ text, maxLength = MAX_LENGTH 
     // Обрезаем текст, если он превышает maxLength
     const truncatedText = useMemo(() => {
         if (text.length > maxLength && !showFullText) {
-            return text.slice(0, maxLength) + '...';
+            return text.slice(0, maxLength) + '... ';
         }
-        return text;
+        return text + ' ';
     }, [text, maxLength, showFullText]);
 
     // Функция для переключения режима отображения текста

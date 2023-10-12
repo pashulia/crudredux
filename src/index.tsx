@@ -7,6 +7,7 @@ import App from './app';
 import { store } from './store/store';
 
 ReactDOM.render(
+    // оборачиваем корневой компонент App, чтобы предоставить доступ к Redux-состоянию приложению.
     <Provider store={store}>
         <App />
     </Provider>,
