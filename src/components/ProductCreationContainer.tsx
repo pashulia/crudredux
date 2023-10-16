@@ -30,7 +30,7 @@ const ProductCreationContainer: React.FC = () => {
         try {
             const response = await createProductApi(product);
             // Если создание продукта успешно, обновляем глобальное Redux-состояние
-            dispatch(setProductsAction([response.data, ...productList])); // Используем dispatch
+            dispatch(setProductsAction([response.data, ...productList]));
         } catch (error) {
             console.error('Error creating product:', error);
         } finally {
